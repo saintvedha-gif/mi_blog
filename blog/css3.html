@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo Diseñar con CSS3</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        .article-page-content {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            line-height: 1.8;
+        }
+
+        .article-page-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <main class="main-content">
+        <section class="article-page-content">
+            <h1>Cómo Diseñar un Sitio Web Moderno con CSS3</h1>
+            <p>
+                CSS3 es la última versión de las Hojas de Estilo en Cascada, y es lo que le da a la web su apariencia moderna y atractiva. Con CSS3, podemos controlar los colores, tipografías y el diseño de la página de formas que antes no eran posibles. Dos de sus mayores innovaciones son Flexbox y CSS Grid.
+            </p>
+            <p>
+                **Flexbox** es perfecto para alinear elementos en una sola dirección (fila o columna), ideal para crear barras de navegación y componentes de UI complejos. **CSS Grid**, por otro lado, nos permite crear diseños bidimensionales, perfectos para la maquetación de toda la página, como el diseño que acabamos de crear en la página de inicio de tu blog.
+            </p>
+            <p>
+                Además, CSS3 nos da acceso a transformaciones, transiciones y animaciones que añaden un toque de vida y dinamismo a tus proyectos, como el efecto que hace que las tarjetas de tu blog se levanten cuando pasas el ratón sobre ellas.
+            </p>
+            <a href="index.html" class="back-btn">← Volver al inicio</a>
+        </section>
+    </main>
+</body>
+</html>

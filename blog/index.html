@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Blog Profesional</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">El Blog de Vedha Saint</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#articulos">Artículos</a></li>
+                    <li><a href="#acerca-de-mi">Sobre Mí</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="hero-section">
+            <div class="hero-text">
+                <h1>El Blog de un Desarrollador Web</h1>
+                <p>Explorando el mundo de la tecnología, el código y la creatividad en la web.</p>
+            </div>
+        </section>
+
+        <section id="acerca-de-mi" class="about-me-section">
+            <div class="about-me-content">
+                <img src="./imagenes/yo.png" alt="Foto de perfil de Vedha Saint" class="profile-photo">
+                <p class="about-intro">
+                    ¡Hola! Soy Vedha Saint, un desarrollador web en Cúcuta. Este blog es mi espacio para explorar
+                    las últimas tendencias en tecnología y compartir mis aprendizajes en HTML, CSS y JavaScript.
+                    Mi misión es crear soluciones digitales que no solo funcionen, sino que también inspiren.
+                </p>
+            </div>
+        </section>
+        
+        <section id="articulos" class="articles-section">
+            <div class="articles-grid-container">
+                <div class="articles-header">
+                    <h2>Artículos Recientes</h2>
+                </div>
+                
+                <article class="article-card article-1">
+                    <img src="./imagenes/html5.png" alt="Imagen del artículo de HTML5" class="article-image">
+                    <div class="article-content">
+                        <h3>Guía Definitiva de HTML5 para Principiantes</h3>
+                        <p>Aprende la estructura básica de una página web y las etiquetas esenciales para comenzar a construir.</p>
+                        <a href="html5.html" class="read-more-btn">Leer más</a>
+                    </div>
+                </article>
+
+                <article class="article-card article-2">
+                    <img src="./imagenes/css3.png" alt="Imagen del artículo de CSS3" class="article-image">
+                    <div class="article-content">
+                        <h3>Cómo Diseñar un Sitio Web Moderno con CSS3</h3>
+                        <p>Descubre las técnicas de diseño web más populares, desde flexbox hasta animaciones, para darle vida a tus proyectos.</p>
+                        <a href="css3.html" class="read-more-btn">Leer más</a>
+                    </div>
+                </article>
+
+                <article class="article-card article-3">
+                    <img src="./imagenes/java.png" alt="Imagen del artículo de JavaScript" class="article-image">
+                    <div class="article-content">
+                        <h3>Introducción a JavaScript: El Lenguaje de la Web</h3>
+                        <p>Conoce los fundamentos de JavaScript y cómo usarlo para añadir interactividad a tus páginas web.</p>
+                        <a href="java.html" class="read-more-btn">Leer más</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 El Blog de Vedha Saint. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
