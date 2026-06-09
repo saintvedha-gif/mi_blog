@@ -1,0 +1,347 @@
+---
+import '../styles/global.css';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog').catch(() => []);
+
+const proyectos = [
+  {
+    title: "CViva (MVP con IA)",
+    description: "Plataforma interactiva para crear y exportar currículos dinámicos. Utiliza funciones Serverless Edge con Anthropic AI para parsear y estructurar CVs automáticamente, con autenticación y persistencia de datos en Supabase.",
+    tags: ["React", "Vite", "Supabase", "Anthropic AI", "Vercel Edge"],
+    img: "cviva.png", 
+    link: "https://cviva-j0o60wtiz-saintvedha-gifs-projects.vercel.app/",
+    type: "ia"
+  },
+  {
+    title: "Klikeo (En desarrollo)",
+    description: "Plataforma SaaS de menús digitales para restaurantes. Diseñada como una alternativa moderna a OlaClick, con automatizaciones avanzadas y mayor personalización de marca.",
+    tags: ["Next.js", "NestJS", "TypeScript", "MongoDB"],
+    img: "Klikeo.png",
+    link: "https://klikeo.pro/",
+    type: "saas"
+  },
+  {
+    title: "Mucha Mazorca",
+    description: "Sitio web para restaurante con menú interactivo completo, carrito de compras integrado usando Context API y gestión de imágenes optimizadas con Cloudinary. Desplegado en producción.",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Cloudinary"],
+    img: "Muchamazorca.png", 
+    link: "https://muchamazorca.com/",
+    type: "food"
+  },
+  {
+    title: "Laguna's Barber & Shop",
+    description: "Migración completa de un sistema legado en PHP/MySQL a una arquitectura moderna de API REST. Implementa autenticación JWT, rutas protegidas de alta seguridad y base de datos escalable.",
+    tags: ["Node.js", "TypeScript", "Express", "MongoDB Atlas"],
+    img: "Lagunas.png",
+    link: "https://lagunas-barber-shop.onrender.com/",
+    type: "api"
+  },
+  {
+    title: "La Federal",
+    description: "Plantilla reutilizable y modular para el sector gastronómico. Centraliza todo el contenido en archivos de datos planos, incluye carrito flotante y automatización de pedidos directos hacia WhatsApp API.",
+    tags: ["React", "Vite", "CSS Variables", "WhatsApp API"],
+    img: "Federal.png",
+    link: "https://saintvedha-gif.github.io/La-Federal/#/",
+    type: "template"
+  }
+];
+
+const certificados = [
+  {
+    title: "Desarrollo de Aplicaciones Informáticas",
+    institution: "Centro Tecnológico de Cúcuta",
+    date: "Noviembre 2025",
+    img: "certificado.jpeg"
+  },
+  {
+    title: "Bachiller Técnico",
+    institution: "Atlantis System",
+    date: "Graduado",
+    img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&h=250&q=80"
+  }
+];
+---
+
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vedha Saint | Full Stack Developer</title>
+</head>
+<body class="bg-[#0f1115] text-[#e2e8f0] font-sans antialiased selection:bg-emerald-500 selection:text-black overflow-x-hidden relative">
+
+  <div id="tsparticles-background" class="absolute inset-0 z-0 pointer-events-none"></div>
+
+  <header class="max-w-5xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row gap-4 justify-between items-center sticky top-0 bg-[#0f1115]/80 backdrop-blur-xl z-50 border-b border-slate-900/40">
+    <div class="text-xl font-bold font-display tracking-tight hover:text-emerald-400 transition-all duration-300">
+      Vedha Saint<span class="text-emerald-400">.</span>dev
+    </div>
+    <nav class="flex gap-5 text-xs sm:text-sm font-medium text-slate-400">
+      <a href="#proyectos" class="nav-link">Proyectos</a>
+      <a href="#certificados" class="nav-link">Estudios</a>
+      <a href="#contacto" class="nav-link">Contacto</a>
+    </nav>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 pt-12 md:pt-16 pb-24 space-y-24 md:space-y-36 relative z-10">
+    
+    <section class="flex flex-col-reverse md:grid md:grid-cols-3 gap-8 md:gap-12 items-center">
+      <div class="w-full md:col-span-2 space-y-4 md:space-y-6 text-center md:text-left">
+        <div class="flex flex-wrap justify-center md:justify-start gap-2.5">
+          <div class="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-400 px-3 py-1 rounded-full text-xs font-mono border border-emerald-500/20">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Disponible para proyectos
+          </div>
+          <div class="inline-flex items-center gap-1.5 bg-slate-800/50 text-slate-400 px-3 py-1 rounded-full text-xs font-mono border border-slate-700/30">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3.5 h-3.5 text-slate-500">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+            </svg>
+            Cúcuta, CO
+          </div>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold font-display tracking-tight leading-tight text-slate-100">
+          Hola, soy <span class="animate-shimmer">Vedha Saint De Jesus</span>.
+        </h1>
+        <p class="text-base sm:text-lg text-slate-400 max-w-xl mx-auto md:mx-0 leading-relaxed">
+          Desarrollador Full Stack enfocado en construir software robusto y arquitecturas limpias, balanceándolo con interfaces de usuario pulidas, dinámicas y con identidad propia.
+        </p>
+      </div>
+      
+      <div class="flex justify-center md:justify-end relative group w-full max-w-[260px] sm:max-w-[300px] md:max-w-none p-6">
+        <div id="tsparticles-orb" class="absolute inset-0 z-0 pointer-events-none"></div>
+        
+        <div class="relative aspect-square w-full sm:w-[260px] md:w-[300px] bg-[#161920] border border-slate-800 rounded-3xl overflow-hidden transform group-hover:scale-[1.02] group-hover:border-emerald-500/40 transition-all duration-500 shadow-[0_0_40px_rgba(34,211,238,0.08)] z-10">
+          <img src="FOTO PERFIL.jpeg" alt="Vedha Saint" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+        </div>
+      </div>
+    </section>
+
+    <section id="proyectos" class="space-y-8 md:space-y-10 scroll-mt-28">
+      <div class="flex items-baseline justify-between border-b border-slate-800 pb-4">
+        <h2 class="text-xl sm:text-2xl font-bold font-display text-slate-100 tracking-tight">Proyectos Destacados</h2>
+        <span class="text-[10px] sm:text-xs text-slate-500 uppercase tracking-widest font-mono">Código activo</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+        {proyectos.map((proyecto) => (
+          <div class="group relative bg-[#161920] border border-slate-800/60 rounded-2xl hover:border-emerald-500/30 md:hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden shadow-xl">
+            
+            <a href={proyecto.link} target={proyecto.link !== "#" ? "_blank" : "_self"} rel="noopener noreferrer" class="relative aspect-video w-full overflow-hidden bg-[#0c0e12] border-b border-slate-800/80 block cursor-pointer">
+              <img 
+                src={proyecto.img} 
+                alt={proyecto.title} 
+                class="w-full h-full object-contain object-center p-3 transition-transform duration-500 group-hover:scale-[1.03]"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#161920]/20 to-transparent pointer-events-none"></div>
+              
+              {proyecto.link !== "#" && (
+                <div class="absolute top-3 right-3 bg-slate-900/80 backdrop-blur-md text-emerald-400 p-2 rounded-full border border-slate-700/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V11.25m-18-6h6m0 0v6m0-6L10.5 10.5" /></svg>
+                </div>
+              )}
+            </a>
+
+            <div class="p-5 sm:p-6 flex flex-col justify-between flex-1 space-y-5">
+              <div class="space-y-3">
+                <a href={proyecto.link} target={proyecto.link !== "#" ? "_blank" : "_self"} rel="noopener noreferrer" class="inline-flex items-center gap-2 group/title cursor-pointer">
+                  
+                  {proyecto.type === "ia" && (
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-emerald-400 group-hover/title:animate-pulse">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 21l-.813-5.096L3 15l5.096-.813L9 9l.813 5.187L15 15l-5.187.813ZM18.094 6.094 17.5 10l-.594-3.906L13 5.5l3.906-.594L17.5 1l.594 3.906L22 5.5l-3.906.594Z" />
+                    </svg>
+                  )}
+                  {proyecto.type === "saas" && (
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-emerald-400">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+                    </svg>
+                  )}
+                  {proyecto.type === "food" && (
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-emerald-400">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72M6.75 18h3.5a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75Z" />
+                    </svg>
+                  )}
+                  {proyecto.type === "api" && (
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-emerald-400">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 0 1-3-3m3 3a3 3 0 1 0 0 6h13.5a3 3 0 1 0 0-6m-16.5-3a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3m-19.5 0a3 3 0 0 0 3 3m13.5-3a3 3 0 0 0 3 3m-9.75-3h1.5m-1.5 6h1.5m6.75-6v3.75m0 3.75a1.125 1.125 0 1 1-2.25 0 1.125 1.125 0 0 1 2.25 0Zm-13.5 0a1.125 1.125 0 1 1-2.25 0 1.125 1.125 0 0 1 2.25 0Z" />
+                    </svg>
+                  )}
+                  {proyecto.type === "template" && (
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-emerald-400">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75 16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z" />
+                    </svg>
+                  )}
+
+                  <h3 class="text-lg sm:text-xl font-bold text-slate-200 group-hover:text-emerald-400 transition-colors duration-200">
+                    {proyecto.title}
+                  </h3>
+                </a>
+                <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                  {proyecto.description}
+                </p>
+              </div>
+              
+              <div class="flex flex-wrap gap-1.5 sm:gap-2 pt-2">
+                {proyecto.tags.map((tag) => (
+                  <span class="bg-slate-800/60 text-slate-400 text-[10px] sm:text-xs px-2.5 py-1 rounded-md font-mono border border-slate-700/30">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section id="certificados" class="scroll-mt-28 space-y-8 md:space-y-10">
+      <div class="flex items-baseline justify-between border-b border-slate-800 pb-4">
+        <h2 class="text-xl sm:text-2xl font-bold font-display text-slate-100 tracking-tight">Educación & Certificados</h2>
+        <div class="flex gap-2">
+          <button id="prevBtn" class="bg-slate-800 hover:bg-slate-700 text-slate-300 p-2 rounded-lg text-xs transition-colors border border-slate-700/40 cursor-pointer">←</button>
+          <button id="nextBtn" class="bg-slate-800 hover:bg-slate-700 text-slate-300 p-2 rounded-lg text-xs transition-colors border border-slate-700/40 cursor-pointer">→</button>
+        </div>
+      </div>
+
+      <div id="carouselContainer" class="flex gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-none pb-4 scroll-smooth">
+        {certificados.map((cert) => (
+          <div class="min-w-[280px] sm:min-w-[340px] md:min-w-[400px] snap-start bg-[#161920] border border-slate-800/60 rounded-2xl overflow-hidden group/cert shadow-lg flex flex-col justify-between">
+            <div class="relative aspect-video w-full overflow-hidden bg-slate-950 border-b border-slate-800">
+              <img src={cert.img} alt={cert.title} class="w-full h-full object-cover group-hover/cert:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="p-5 sm:p-6 space-y-2">
+              <h3 class="text-base sm:text-lg font-bold text-slate-200 leading-tight group-hover/cert:text-emerald-400 transition-colors">{cert.title}</h3>
+              <p class="text-xs sm:text-sm text-slate-400">{cert.institution}</p>
+              <div class="text-[10px] font-mono text-slate-500 pt-2">{cert.date}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section id="contacto" class="scroll-mt-28 space-y-8 md:space-y-10">
+      <div class="flex items-baseline justify-between border-b border-slate-800 pb-4">
+        <h2 class="text-xl sm:text-2xl font-bold font-display text-slate-100 tracking-tight">Hablemos</h2>
+        <span class="text-[10px] sm:text-xs text-slate-500 uppercase tracking-widest font-mono">Conexión</span>
+      </div>
+
+      <div class="bg-[#161920] border border-slate-800/60 rounded-2xl p-6 sm:p-8 md:p-10 max-w-3xl mx-auto text-center space-y-6 shadow-2xl relative overflow-hidden">
+        <div class="absolute -top-10 -right-10 w-40 h-40 bg-emerald-500/5 rounded-full blur-2xl"></div>
+        
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-100 font-display tracking-tight">
+          ¿Tienes una idea o un proyecto en mente?
+        </h3>
+        <p class="text-sm sm:text-base text-slate-400 max-w-xl mx-auto leading-relaxed">
+          Estoy disponible para desarrollo de aplicaciones a medida, consultorías de arquitectura limpia o integraciones avanzadas con Inteligencia Artificial.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+          <a 
+            href="https://wa.me/573177956703" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-6 py-3 rounded-xl transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg shadow-emerald-500/10 cursor-pointer"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.824-1.602-5.123-3.901-6.727-6.727l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+            </svg>
+            Escríbeme por WhatsApp
+          </a>
+
+          <a 
+            href="https://github.com/saintvedha-gif" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium px-6 py-3 rounded-xl transition-all duration-300 border border-slate-700/50 cursor-pointer"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+            </svg>
+            Revisar GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="max-w-5xl mx-auto px-4 sm:px-6 py-8 border-t border-slate-900/60 text-center text-xs text-slate-500 font-mono relative z-10">
+    <div>© 2026 Vedha Saint. Hecho con Astro y Tailwind CSS.</div>
+  </footer>
+
+  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/2.12.0/tsparticles.bundle.min.js"></script>
+  
+  <script is:inline>
+    tsParticles.load("tsparticles-background", {
+      fpsLimit: 60,
+      particles: {
+        number: { value: 25, density: { enable: true, value_area: 800 } },
+        color: { value: "#22d3ee" },
+        shape: { type: "circle" },
+        opacity: { value: 0.15, random: true },
+        size: { value: 1.5, random: true },
+        move: { enable: true, speed: 0.1, direction: "none", random: true, out_mode: "out" }
+      },
+      interactivity: { events: { resize: true } },
+      retina_detect: true
+    });
+
+    tsParticles.load("tsparticles-orb", {
+      fpsLimit: 60,
+      particles: {
+        number: { value: 130 },
+        color: { value: ["#4ade80", "#22d3ee"] },
+        shape: { type: "circle" },
+        opacity: {
+          value: 0.5,
+          random: true,
+          anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false }
+        },
+        size: {
+          value: 2,
+          random: true,
+          anim: { enable: true, speed: 2, size_min: 0.5, sync: false }
+        },
+        move: {
+          enable: true,
+          speed: 1.8,
+          direction: "none",
+          random: false,
+          straight: false,
+          out_mode: "bounce",
+          bounce: false,
+          attract: { enable: true, rotateX: 3000, rotateY: 3000 }
+        }
+      },
+      interactivity: {
+        detect_on: "parent",
+        events: {
+          onhover: { enable: true, mode: "grab" },
+          resize: true
+        },
+        modes: {
+          grab: {
+            distance: 140,
+            line_linked: { opacity: 0.4, color: "#22d3ee" }
+          }
+        }
+      },
+      retina_detect: true
+    });
+
+    const container = document.getElementById('carouselContainer');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    if (container && prevBtn && nextBtn) {
+      const scrollAmount = window.innerWidth < 640 ? 290 : 360;
+      prevBtn.addEventListener('click', () => { container.scrollLeft -= scrollAmount; });
+      nextBtn.addEventListener('click', () => { container.scrollLeft += scrollAmount; });
+    }
+  </script>
+</body>
+</html>
